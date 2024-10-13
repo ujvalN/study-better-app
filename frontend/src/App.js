@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import ReactMarkdown from 'react-markdown';
 
 function App() {
   const [data, setData] = useState(null);
@@ -22,8 +23,9 @@ function App() {
   if (error) return <div>Error: {error}</div>;
 
   return (
+    // <h1>{data ? data : 'Loading...'}</h1>
     <div className="App">
-      <h1>{data ? data : 'Loading...'}</h1>
+      <ReactMarkdown>{data ? data : 'Loading...'}</ReactMarkdown>
     </div>
   );
 }
