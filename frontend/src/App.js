@@ -6,7 +6,7 @@ function App() {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-  fetch('http://127.0.0.1:5000/api/data') // Adjust the URL if needed
+  fetch('http://127.0.0.1:5000/api/data') // THis is what connects to backend, once you run the backend server, and also frontend, this is how they connect.
     .then((response) => {
       if (!response.ok) {
         throw new Error('Network response was not ok');
@@ -24,6 +24,7 @@ function App() {
 
   return (
     // <h1>{data ? data : 'Loading...'}</h1>
+    // This is what displays the output, we use ReactMarkdown because the output is given in markdown.
     <div className="App">
       <ReactMarkdown>{data ? data : 'Loading...'}</ReactMarkdown>
     </div>

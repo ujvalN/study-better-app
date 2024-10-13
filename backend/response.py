@@ -2,6 +2,7 @@ from groq import Groq
 
 client = Groq()
 
+# This is p much complete until we have to improve our prompting, so dont worry about it for now (10/13/24)
 def main(course="", n_questions="10", n_flashcards="10", topics=[], complexity="medium", type_of_questions="application"):
 
     message = f"Make {n_questions} {complexity} {type_of_questions} questions on these collective topics: {topics} in a quiz manner with question and then 4 answer choices, followed by a concise explanation. Then, make {n_flashcards} flashcards with a term on one line followed by a memorable description of the term."
