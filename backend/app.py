@@ -3,6 +3,7 @@ from flask import Flask, jsonify, send_from_directory, Response
 from flask_cors import CORS
 from typing import Union
 from pathlib import Path
+from response import main
 
 # Define base and build paths
 base_path = Path(__file__).resolve().parent
@@ -12,9 +13,11 @@ build_path = base_path / 'frontend' / 'build'
 app = Flask(__name__, static_folder=str(build_path))
 CORS(app)
 
+response = main(course="AP Physics 1", n_questions="8", n_flashcards="6", topics=["Pressure and Buoyancy", "Unit 1"], complexity="easy")
+
 @app.route('/api/data', methods=['GET'])
 def get_data() -> Response:
-    return jsonify({'message': 'Hello from Flask!'})
+    return jsonify({'message': response})
 
 @app.route('/', defaults={'path': ''})
 @app.route('/<path:path>')
