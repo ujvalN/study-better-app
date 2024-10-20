@@ -1,5 +1,5 @@
 # Our Goal
-Study Better is an app that aims to create informative and useful quizzes and flashcards from user input such as topics, courses, and topics.\n
+Study Better is an app that aims to create informative and useful quizzes and flashcards from user input such as topics, courses, and topics.<br>
 It is initially being build for the Schoolhouse.world CS Hackathon.
 
 ## Setup
