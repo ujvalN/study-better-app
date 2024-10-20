@@ -1,6 +1,7 @@
 # Our Goal
 Study Better is an app that aims to create informative and useful quizzes and flashcards from user input such as topics, courses, and topics.<br>
-It is initially being build for the Schoolhouse.world CS Hackathon.
+It is initially being build for the Schoolhouse.world CS Hackathon.<br>
+Built by Ujval N, Krishna E, Kailash K, and Toyeshh M.
 
 ## Setup
 ### Backend
