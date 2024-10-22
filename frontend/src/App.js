@@ -7,7 +7,7 @@ function App() {
   const [error, setError] = useState(null);
   const [formData, setFormData] = useState({
     course: '',
-    n_questions: '',
+    n_questions: '',  
     n_flashcards: '',
     topics: '',
     complexity: 'easy',
