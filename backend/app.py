@@ -1,5 +1,4 @@
-import os
-from flask import Flask, jsonify, send_from_directory, Response
+from flask import Flask, jsonify, send_from_directory, Response, request
 from flask_cors import CORS
 from typing import Union
 from pathlib import Path
@@ -13,12 +12,16 @@ build_path = base_path / 'frontend' / 'build'
 app = Flask(__name__, static_folder=str(build_path))
 CORS(app)
 
-# This runs the groq api from the response.py file and stores it in variable "response".
-response = main(course="AP Physics 1", n_questions="8", n_flashcards="6", topics=["Pressure and Buoyancy", "Unit 1"], complexity="easy")
-
 # Sends the response to frontend.
 @app.route('/api/data', methods=['GET'])
 def get_data() -> Response:
+    course = request.args.get('course', default='AP Physics 1')
+    n_questions = request.args.get('n_questions', default='8')
+    n_flashcards = request.args.get('n_flashcards', default='6')
+    topics = request.args.get('topics', default='').split(',')
+    complexity = request.args.get('complexity', default='easy')
+
+    response = main(course=course, n_questions=n_questions, n_flashcards=n_flashcards, topics=topics, complexity=complexity)
     return jsonify({'message': response})
 
 @app.route('/', defaults={'path': ''})
