@@ -1,5 +1,5 @@
 # Our Goal
-Study Better is a website that aims to create informative and useful quizzes and flashcards from user input such as topics, courses, and topics.<br>
+Study Better is a website that aims to create informative and useful quizzes and flashcards from user input such as topics, courses, and difficulty levels.<br>
 It is initially being built for the Schoolhouse.world CS Hackathon.<br>
 Being built by Ujval N, Krishna E, Kailash K, and Toyeshh M.
 
